@@ -9,4 +9,4 @@ sk인포섹 - 데이터보안반
 2. scr12.py 파일을 실행해야 합니다
 3. cmd창에서 scr12.py 파일이 있는 경로에서 " python scr12.py " 명령어를 사용하여 해당 프로그램을 실행합니다
 4. 데이터 갱신은 확인이 용이 30초마다 갱신되도록 만들었습니다.
-
+5. pip install pymysql 과 conda install -c scrapinghub scrapy 를 cmd 창에서 이 파일이 있는 경로에 설치를 해주셔야 합니다.
