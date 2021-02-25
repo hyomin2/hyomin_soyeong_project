@@ -46,9 +46,6 @@ class MyScrapyPipeline:
         print("DB Connected !!!")
 
     def create_table(self):
-        sql_1 = "DROP TABLE IF EXISTS stock_review"
-        self.cur.execute(sql_1)
-
         sql_2 = """
         CREATE TABLE IF NOT EXISTS stock_review(
             id INT AUTO_INCREMENT PRIMARY KEY,
