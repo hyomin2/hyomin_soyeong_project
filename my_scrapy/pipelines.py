@@ -20,7 +20,7 @@ class MyScrapyPipeline:
         self.storeDB(item)
 
         print("Timer Start 10sec -----------")
-        time.sleep(10)
+        time.sleep(30)
         print("Timer over ------------------")
         
         return item
