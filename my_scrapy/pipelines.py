@@ -8,6 +8,7 @@
 from itemadapter import ItemAdapter
 import pymysql
 import time
+from datetime import datetime, timezone
 
 class MyScrapyPipeline:
     def __init__(self):
@@ -28,8 +29,11 @@ class MyScrapyPipeline:
 
     def storeDB(self, item):
         # 각 아이템을 테이블에 저장
+        now = datetime.now()
+        f = '%Y-%m-%d %H:%M:%S'
+        now2 = now.strftime(f)
         sql = "insert into stock_review(now_time, amount, price, max_price, min_price, s_code) values (%s, %s, %s, %s, %s, %s);"
-        val = (item.get('now_time'), item.get('amount'), item.get('price'), item.get('max_price'), item.get('min_price'), item.get('s_code'))
+        val = (now2, item.get('amount'), item.get('price'), item.get('max_price'), item.get('min_price'), item.get('s_code'))
         self.cur.execute(sql, val)
         self.conn.commit()
         print("DB insert Success !!!!!!")
